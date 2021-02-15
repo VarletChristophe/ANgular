@@ -1,0 +1,67 @@
+<h1> TO DO LIST </h1>
+
+<!-- Affichage de base 
+<p *ngFor="let tache of taches">
+    nom : {{ tache.nom }},
+    etat : {{ tache.etat }}
+</p>
+-->
+
+<!-- Simple affichage en tableau
+<h2>Affichage</h2>
+<div class="container">
+    <div class="row border">
+        <div class="col-sm-6 border"> A FAIRE</div>
+        <div class="col-sm-6 border"> FAIT</div>
+    </div>
+
+    <div class="row border" *ngFor="let tache of taches">
+        <div class="col-sm-6 border">
+            <ng-template [ngIf]="tache.etat == false">
+                {{ tache.nom }}
+            </ng-template>
+        </div>
+
+        <div class="col-sm-6 border">
+            <ng-template [ngIf]="tache.etat == true">
+                {{ tache.nom }}
+            </ng-template> 
+        </div>
+    </div>
+</div>
+ -->
+
+<h2>Modification</h2>
+<div class="container">
+    <div class="row border">
+        <div class="col-sm-6 border"> A FAIRE</div>
+        <div class="col-sm-6 border"> FAIT</div>
+    </div>
+
+    <div class="row border" *ngFor="let tache of taches">
+        <div class="col-sm-6 border">
+            <ng-template [ngIf]="tache.etat == false">
+                <input type="text" [(ngModel)]="tache.nom">
+                <button (click)="supprimer(tache.id)"> Supprimer</button>
+                <button (click)="modifier(tache.id, tache.nom, tache.etat)"> Modifier etat</button>
+            </ng-template>
+        </div>
+
+        <div class="col-sm-6 border">
+            <ng-template [ngIf]="tache.etat == true">
+                <input type="text" [(ngModel)]="tache.nom">
+                <button (click)="supprimer(tache.id)"> Supprimer</button>
+                <button (click)="modifier(tache.id, tache.nom,tache.etat)"> Modifier etat</button>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<h2>Ajouter</h2>
+<div>
+    <input type="text" [(ngModel)]="message1">
+    <button (click)="ajouter(message1)"> Ajouter</button>
+</div> 
+ 
+
+

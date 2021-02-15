@@ -1,0 +1,15 @@
+
+<div *ngFor="let user of tableau">
+    <!-- En fonction des paramètres, User renvoi des éléments différents -->
+
+    <!-- Récupère les informations de tab car user.name existe -->
+    <div *ngIf="user.name">
+        {{user.name}}
+    </div>
+
+    <!-- Récupère les informations de tab2 car user.name n'existe pas -->
+    <div *ngIf="!user.name">
+        {{user}}
+    </div>
+</div>
+<button (click)="add()"> Créer </button>

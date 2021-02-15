@@ -1,0 +1,50 @@
+<p>personne works!</p>
+
+<!-- INTERPOLATION {{}} -->
+
+<p>son nom est : {{ nom }}  </p>
+     <!-- Parcourir un tableau ... Comme un foreach -->
+<p *ngFor="let user of users">
+    nom : {{ user.name }},
+    age : {{ user.age }} ans
+    <button (click)="hello2(user.name)"> Button</button>
+</p>
+
+
+<!-- PROPERTY BINDING []
+<div id="img">
+    <img [src]="img" alt="image nintendo">
+</div>
+-->
+
+
+<!-- EVENT BINDING -->
+<!--          exemple ... Clic sur un bouton  -->
+<button (click)="hello()"> Button</button>
+
+
+<!-- TWO-WAY DATA BINDING -->
+{{ message }}
+<!-- première méthode -->
+<div>
+    <input type="text" [value]="message" (input)="message = $event.target.value">
+</div>
+<!-- deuxième méthode -->
+<div>
+    <input type="text" [ngModel]="message" (ngModelChange)="message = $event">
+</div>
+<!-- Troisième méthode -->
+<!-- Méthode à utiliser -->
+<div>
+    <input type="text" [(ngModel)]="message">
+</div>  
+
+
+<div>
+    <p>{{ message | uppercase }}</p>
+    <p>{{ nombre  | number:'1.1-2'  }}</p>
+    <p>{{ pourcent | percent }}</p>
+    <p>{{ date | date }}</p>
+    <p>{{ date | date:'shortTime' }}</p>
+    <p>{{ user | json }}</p>
+</div>

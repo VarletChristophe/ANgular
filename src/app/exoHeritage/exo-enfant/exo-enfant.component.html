@@ -1,0 +1,29 @@
+
+<div *ngFor="let user of tableau"> 
+    <div *ngIf="user.name">
+        {{user.name}}
+        {{user.prenom}}
+        {{user.age}}
+    </div>
+</div>
+
+
+<form (ngSubmit)= "soumettre()" [formGroup]="userProfileForm">
+    <label> name :
+        <input type="text" placeholder="Entrez un nom"
+        formControlName="name">
+    </label>
+
+    <label> prenom :
+        <input type="text" placeholder="Entrez un prénom"
+        formControlName="prenom"> 
+    </label>
+
+    <label> age :
+        <input type="text" placeholder="Entrez un age"
+        formControlName="age">
+    </label>
+
+    <button type="submit"> Validation </button>
+</form>
+

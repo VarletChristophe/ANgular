@@ -1,0 +1,30 @@
+
+<!-- Faire une todolist -->
+<!-- CRUD à faire -->
+<!-- Modifier l'état -->
+
+<!-- Faire une todolist -->
+<!-- Faire un tableau -->
+<!-- ma tache : id, tache, statut -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 border"> A FAIRE </div>
+        <div class="col-sm-6 border"> FAIT </div>
+    </div>
+
+    <div class="row border" *ngFor="let task of tab">
+        <div class="col-sm-6 border">
+            <div *ngIf="task.state == false">
+                {{ task.task }}
+            </div>  
+        </div>
+        <div class="col-sm-6 border">
+            <div *ngIf="task.state == true">
+                {{ task.task }}
+            </div>
+        </div>  
+    </div>
+</div>
+
+

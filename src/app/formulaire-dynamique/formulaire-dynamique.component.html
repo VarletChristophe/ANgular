@@ -1,0 +1,15 @@
+<form (ngSubmit)="soumettre()" [formGroup] = "TeamForm">
+    <h3> Equipe </h3>
+
+    <div formArrayName="membres">
+        <div *ngFor="let member of members.controls; let i = index">
+            <label>
+                <input type="text" [formControlName] = i>
+            </label>
+        </div>
+        <button (click)="addMembre()"> Ajouter membres </button>
+    </div>
+
+    
+    <button type="submit"> Validation </button>
+</form>
